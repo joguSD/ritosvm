@@ -12,7 +12,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 
 public class MatchDownloader {
-	private static final String apiKey = "c5bdc00b-25f1-4534-bcaf-edede824ffbf";
+	private static final String apiKey = "79f23fb6-bffb-4bbd-8eda-f5b2641060ad";
 	private static final String urlFormat = "https://%s.api.pvp.net/api/lol/%s/v2.2/match/%d?includeTimeline=false&api_key=%s";
 
 	public static String getMatch(long match, String region) throws InterruptedException {

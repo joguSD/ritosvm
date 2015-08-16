@@ -8,10 +8,14 @@ package com.weasel.svm;
 public class App {
 
 	public static void main(String[] args) {
-		long match = 2005587476;
+//		long match = 2005587476;
 		String region = "na";
-		//String response = MatchDownloader.getMatch(match, region);
-		//System.out.println(response);
-		MatchDownloader.getMatches(region);
+//		//String response = MatchDownloader.getMatch(match, region);
+//		//System.out.println(response);
+//		MatchDownloader.getMatches(region);
+		
+		MatchReader.scrollMatches(region, match -> {
+			System.out.println(match.getMatchId());
+		});
 	}
 }
