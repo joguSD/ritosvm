@@ -2,6 +2,9 @@ package models;
 
 import java.util.List;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Match {
 	private String matchVersion;
 	private String matchType;

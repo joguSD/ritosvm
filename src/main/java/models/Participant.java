@@ -1,5 +1,8 @@
 package models;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Participant {
 	private int participantId;
 	private int championId;

@@ -15,7 +15,8 @@ public class App {
 //		MatchDownloader.getMatches(region);
 		
 		MatchReader.scrollMatches(region, match -> {
-			System.out.println(match.getMatchId());
+			System.out.println(match.getParticipants().get(0).getStats().isWinner());
+			System.out.println(match.getParticipants().get(0).getHighestAchievedSeasonTier());
 		});
 	}
 }
