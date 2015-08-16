@@ -17,7 +17,7 @@ import com.google.gson.GsonBuilder;
 public class MatchDownloader {
 	private static final String apiKey = "c5bdc00b-25f1-4534-bcaf-edede824ffbf";
 	private static final String urlFormat = "https://%s.api.pvp.net/api/lol/%s/v2.2/match/%d?includeTimeline=false&api_key=%s";
-	
+
 	public static String getMatch(long match, String region){
 		String requestString = String.format(urlFormat, region,region,match,apiKey);
 		URL url;
@@ -33,7 +33,7 @@ public class MatchDownloader {
 			return null;
 		}
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public static void getMatches(String region){
 		FileWriter file;
@@ -41,11 +41,11 @@ public class MatchDownloader {
 		JSONObject matchJson;
 		JSONParser parser = new JSONParser();
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-		
-		try {			
+
+		try {
 			JSONArray json = (JSONArray) parser.parse(new FileReader("./matches/"+region.toUpperCase()+".json"));
 			file = new FileWriter("./matches/"+region.toUpperCase()+"_Objects.json");
-			
+
 			int counter = 0;
 			file.write("[");
 			Iterator<Long> it = json.iterator();
@@ -62,9 +62,9 @@ public class MatchDownloader {
 					System.out.print(".");
 					if(counter % 20 == 0) {
 						System.out.print("\n");
-					}	
-				}		
-				Thread.sleep(1250);
+					}
+				}
+				Thread.sleep(1350);
 			}
 			file.write("]");
 			file.close();
